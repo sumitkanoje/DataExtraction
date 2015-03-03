@@ -17,19 +17,25 @@ public class ParseTwo {
 		
 		doc = Jsoup.connect("http://www.4icu.org/in/indian-universities.htm").userAgent("Mozilla").get();
 		
-		String title = doc.title();
-		System.out.println(title);
-		
-		Elements table = doc.select("table[width=100%]");
-		Elements links = table.select("a[href]");
-		//Elements loc = table.select("h5");
+		Elements sections = doc.select("div.section.group");
+		Element temp = sections.get(6);
+
+		Elements links = temp.select("td.i a[href]");
 		int linkcount=0;
 		for(Element link: links){
 			System.out.println("\nlink : " + link.attr("href"));
-			System.out.println("text : " + link.text());
+			try{
+			ParseThree.main("http://www.4icu.org"+link.attr("href").toString());
+			}catch(Exception e){
+				System.out.print("?");
+			}finally{
+				
+			}
+			//System.out.println("text : " + link.text());
 			linkcount++;
 		}
 		System.out.println(linkcount);
+		
 
 	}
 
