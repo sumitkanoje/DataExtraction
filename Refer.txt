@@ -1,0 +1,10 @@
+Use selector-syntax to find elements
+http://jsoup.org/cookbook/extracting-data/selector-syntax
+
+UNIVERSITIES IN INDIA
+http://www.4icu.org/in/indian-universities.htm
+
+Jsoup HTML Parser Hello World Examples
+http://www.mkyong.com/java/jsoup-html-parser-hello-world-examples/
+
+http://jsoup.org/cookbook/extracting-data/example-list-links
