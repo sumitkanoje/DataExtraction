@@ -47,12 +47,7 @@ public class ParseThree {
 //So You Will Have to implement for loop inside this to print all courses available in a university.
 //I have used .first() function which retrieves only first course from Table
 		Elements raw = doc.select("tr:has(img[src=/i/1b.gif])");
-//		Element courses = raw.get(0);
-//		Element course = courses.child(0);
-//		course = course.getElementsByClass("tooltip").first();
-//		course = course.
-//		System.out.println("Courses: "+course.childNode(0)+"\n");
-//		
+
 		for(Element coursse: raw){
 			Elements coursename = coursse.select("a.tooltip");
 			System.out.print("\nCourse: "+coursename.get(0).childNode(0));
@@ -66,7 +61,7 @@ public class ParseThree {
 		
 		temp = sections.get(12);
 		Elements fees = temp.select("tr td[align=center] h6");
-		System.out.println("Fees: "+fees.text());
+		System.out.println("\nFees: "+fees.text());
 //Get Admissions Information
 		temp = sections.get(14);
 		Elements adinfo = temp.select("h5");
