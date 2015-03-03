@@ -95,7 +95,7 @@ public class ParseThree {
 		temp = sections.get(28);
 		Elements socinfo = temp.select("div.col.span_2_of_2");
 		Elements slinks = socinfo.select("a[href]");
-		System.out.print(",Social Media: "+socinfo.text()+"\n"+slinks.text()+"\n"+slinks.attr("href"));
+		System.out.print(",Social Media: "+socinfo.text()+","+slinks.text()+","+slinks.attr("href"));
 		
 //Print Complete Information
 		System.out.println();

@@ -18,17 +18,20 @@ public class UniList {
 		
 		doc = Jsoup.connect("http://www.4icu.org/in/index.htm").userAgent("Mozilla").get();
 		
-		String title = doc.title();
-		System.out.println(title);
-		
-		
 		Elements table = doc.select("table[width=100%]");
 		Elements links = table.select("tr");
-		//Elements loc = table.select("h5");
+
 		int linkcount=0;
 		for(Element link: links){
 			
-			System.out.println("\nText : " + link.select("span").text() +","+link.select("a[href]").text()+",http://www.4icu.org"+link.select("a[href]").attr("href")+","+link.select("td.i h5").text());
+			System.out.println("\nText : " + link.select("span").text() +","+link.select("a[href]").text()+","+link.select("td.i h5").text());
+			try{
+				ParseThree.main("http://www.4icu.org"+link.select("a[href]").attr("href")); 
+			}catch(Exception e){
+				System.out.print("?");
+			}finally{
+
+			}
 			linkcount++;
 		}
 		System.out.println(linkcount);

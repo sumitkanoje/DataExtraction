@@ -19,10 +19,11 @@ public class ParseTwo {
 		
 		Elements sections = doc.select("div.section.group");
 		Element temp = sections.get(6);
-
+		
 		Elements links = temp.select("td.i a[href]");
 		int linkcount=0;
 		for(Element link: links){
+			System.out.print(link.parent());
 			System.out.println("\nlink : " + link.attr("href"));
 			try{
 			ParseThree.main("http://www.4icu.org"+link.attr("href").toString());
