@@ -23,7 +23,7 @@ public class ParseThree {
 		Elements sections = doc.select("div.section.group");
 		Element temp = sections.get(6);
 		Elements uname = temp.select("h5 a b");
-		System.out.print("\nName: "+uname.text());
+		//System.out.print("\nName: "+uname.text());
 		Elements ulink = temp.select("h5 a");
 		System.out.print(",Link: "+ulink.attr("href"));
 		Elements acronym = temp.getAllElements();

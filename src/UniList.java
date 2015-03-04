@@ -24,7 +24,7 @@ public class UniList {
 		int linkcount=0;
 		for(Element link: links){
 			
-			System.out.println("\nText : " + link.select("span").text() +","+link.select("a[href]").text()+","+link.select("td.i h5").text());
+			System.out.print("\nUni : " + link.select("span").text() +","+link.select("a[href]").text()+","+link.select("td.i h5").text());
 			try{
 				ParseThree.main("http://www.4icu.org"+link.select("a[href]").attr("href")); 
 			}catch(Exception e){
