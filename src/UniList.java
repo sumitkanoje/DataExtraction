@@ -1,4 +1,7 @@
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -14,6 +17,8 @@ public class UniList {
 	 */
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
+		System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("console.txt"))));
+		
 		Document doc;
 		
 		doc = Jsoup.connect("http://www.4icu.org/in/index.htm").userAgent("Mozilla").get();

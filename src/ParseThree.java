@@ -96,7 +96,7 @@ public class ParseThree {
 		System.out.print(",Social Media: "+socinfo.text()+","+slinks.text()+","+slinks.attr("href"));
 		
 //Print Complete Information
-		System.out.println();
+		//System.out.println();
 
 	}
 
