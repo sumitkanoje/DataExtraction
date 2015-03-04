@@ -31,8 +31,6 @@ public class ParseThree {
 			acronym = temp.select("acronym");
 		}catch(Exception e){
 			acronym.val("?");
-			}finally{
-				
 		}
 		System.out.print(",Acronym: "+acronym.text());
 		Element year = temp.select("tr td h5").get(2);
