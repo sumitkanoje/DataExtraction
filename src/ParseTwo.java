@@ -29,8 +29,6 @@ public class ParseTwo {
 			ParseThree.main("http://www.4icu.org"+link.attr("href").toString());
 			}catch(Exception e){
 				System.out.print("?");
-			}finally{
-				
 			}
 			//System.out.println("text : " + link.text());
 			linkcount++;

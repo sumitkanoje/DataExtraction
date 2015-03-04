@@ -29,8 +29,6 @@ public class UniList {
 				ParseThree.main("http://www.4icu.org"+link.select("a[href]").attr("href")); 
 			}catch(Exception e){
 				System.out.print("?");
-			}finally{
-
 			}
 			linkcount++;
 		}
