@@ -6,7 +6,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 
-public class UniInfo {
+public class GetOneUniInfo {
 
 	/**
 	 * @param args
