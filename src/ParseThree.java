@@ -22,8 +22,8 @@ public class ParseThree {
 //Get General Information		
 		Elements sections = doc.select("div.section.group");
 		Element temp = sections.get(6);
-		//Elements uname = temp.select("h5 a b");
-		//System.out.print("\nName: "+uname.text());
+		Elements uname = temp.select("h5 a b");
+		System.out.print("\nName: "+uname.text());
 		Elements ulink = temp.select("h5 a");
 		System.out.print(",Link: "+ulink.attr("href"));
 		Elements acronym = temp.getAllElements();
@@ -35,6 +35,7 @@ public class ParseThree {
 		System.out.print(",Acronym: "+acronym.text());
 		Element year = temp.select("tr td h5").get(2);
 		System.out.print(",Year:"+year.text());
+		
 		
 //Get Location Information
 		temp = sections.get(8);
