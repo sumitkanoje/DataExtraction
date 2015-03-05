@@ -26,7 +26,7 @@ public class ParseTwo {
 			System.out.print(link.parent());
 			System.out.println("\nlink : " + link.attr("href"));
 			try{
-			ParseThree.main("http://www.4icu.org"+link.attr("href").toString());
+			UniInfo.main("http://www.4icu.org"+link.attr("href").toString());
 			}catch(Exception e){
 				System.out.print("?");
 			}

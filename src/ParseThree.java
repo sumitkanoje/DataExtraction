@@ -11,18 +11,18 @@ public class ParseThree {
 	 * @param args
 	 * @throws IOException 
 	 */
-	public static void main(String args) throws IOException {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		Document doc;
 		
-		//doc = Jsoup.connect("http://www.4icu.org/reviews/12299.htm").userAgent("Mozilla").get();
+		doc = Jsoup.connect("http://www.4icu.org/reviews/12098.htm").userAgent("Mozilla").get();
 		
-		doc = Jsoup.connect(args).userAgent("Mozilla").get();
+		//doc = Jsoup.connect(args).userAgent("Mozilla").get();
 				
 //Get General Information		
 		Elements sections = doc.select("div.section.group");
 		Element temp = sections.get(6);
-		Elements uname = temp.select("h5 a b");
+		//Elements uname = temp.select("h5 a b");
 		//System.out.print("\nName: "+uname.text());
 		Elements ulink = temp.select("h5 a");
 		System.out.print(",Link: "+ulink.attr("href"));
@@ -79,8 +79,20 @@ public class ParseThree {
 		System.out.print(",Size & Profile: "+spinfo.text());
 //Get facilities and Services
 		temp = sections.get(19);
-		Elements fsinfo = temp.select("h5");
-		System.out.print(",Facilities: "+fsinfo.text());
+		System.out.print(",Facilities: ");
+		Elements faid = temp.select("img[src=/i/_financial_aids_1.gif]");
+		if(faid.size()>0){System.out.print("FAid: Yes");}else{System.out.print("FAid: Not Reported");}
+		Elements abroadstudy = temp.select("img[src=/i/_study_abroad_1.gif]");
+		if(abroadstudy.size()>0){System.out.print(" Abroad Program: Yes");}else{System.out.print(" Aboad Program: Not Reported");}
+		Elements library = temp.select("img[src=/i/_library_1.gif]");
+		if(library.size()>0){System.out.print(" Library: Yes");}else{System.out.print(" Library: Not Reported");}
+		Elements sports = temp.select("img[src=/i/_sport_facilities_1.gif]");
+		if(sports.size()>0){System.out.print(" Sports: Yes");}else{System.out.print(" Sports: Not Reported");}
+		Elements housing = temp.select("img[src=/i/_housing_1.gif]");
+		if(housing.size()>0){System.out.print(" Housing: Yes");}else{System.out.print(" Housing: Not Reported");}
+		Elements distance_learning = temp.select("img[src=/i/_distance_learning_1.gif]");
+		if(distance_learning.size()>0){System.out.print(" Distance Learning: Yes");}else{System.out.print(" Distance Learning: Not Reported");}
+		
 //Get Accreditations
 		temp = sections.get(22);
 		Elements accinfo = temp.select("h5");
@@ -89,6 +101,7 @@ public class ParseThree {
 		temp = sections.get(24);
 		Elements affinfo = temp.select("h5");
 		System.out.print(",Affiliations: "+affinfo.text());
+
 //Get Social Media information
 		temp = sections.get(28);
 		Elements socinfo = temp.select("div.col.span_2_of_2");

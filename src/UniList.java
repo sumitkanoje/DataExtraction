@@ -17,7 +17,7 @@ public class UniList {
 	 */
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("console.txt"))));
+		//System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("console.txt"))));
 		
 		Document doc;
 		
@@ -31,7 +31,7 @@ public class UniList {
 			
 			System.out.print("\nUni : " + link.select("span").text() +","+link.select("a[href]").text()+","+link.select("td.i h5").text());
 			try{
-				ParseThree.main("http://www.4icu.org"+link.select("a[href]").attr("href")); 
+				UniInfo.main("http://www.4icu.org"+link.select("a[href]").attr("href")); 
 			}catch(Exception e){
 				System.out.print("?");
 			}
