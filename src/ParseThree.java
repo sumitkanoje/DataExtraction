@@ -15,7 +15,7 @@ public class ParseThree {
 		// TODO Auto-generated method stub
 		Document doc;
 		
-		doc = Jsoup.connect("http://www.4icu.org/reviews/12098.htm").userAgent("Mozilla").get();
+		doc = Jsoup.connect("http://www.4icu.org/reviews/12299.htm").userAgent("Mozilla").get();
 		
 		//doc = Jsoup.connect(args).userAgent("Mozilla").get();
 				
@@ -106,10 +106,11 @@ public class ParseThree {
 		temp = sections.get(28);
 		Elements socinfo = temp.select("div.col.span_2_of_2");
 		Elements slinks = socinfo.select("a[href]");
-		System.out.print(",Social Media: "+socinfo.text()+","+slinks.text()+","+slinks.attr("href"));
-		
+		for(Element slink: slinks){
+			System.out.print(",Social Media: "+slink.text()+","+slink.attr("href"));
+		}
 //Print Complete Information
-		//System.out.println();
+		System.out.println();
 
 	}
 
